@@ -45,6 +45,10 @@ svg.teaser text{font:11px "IBM Plex Mono",monospace;fill:#8a8a8a}
 .tag{position:absolute;top:8px;left:8px;padding:2px 7px;font:600 11px/1.4 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:var(--navy);border-radius:2px}
 .pub .title{font-weight:600;color:var(--strong);line-height:1.3}
 .pub .meta{color:var(--meta);font-size:16px}
+.demo{margin:14px 0 6px;border:1px solid var(--rule)}.demo-h{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:8px 10px;border-bottom:1px solid var(--rule);font:12px/1.4 system-ui,sans-serif;color:var(--meta)}.demo-h b{color:var(--strong);font-weight:600}.demo-h a{margin-left:auto;color:var(--strong)}.demo iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+.btns button{font:12px/1 system-ui,sans-serif;color:var(--bg);background:var(--strong);border:1px solid var(--strong);padding:5px 9px;border-radius:2px;cursor:pointer}
+.btns button:hover{background:var(--navy);border-color:var(--navy)}
+.demo-h button{margin-left:6px;font:12px/1 system-ui,sans-serif;color:var(--strong);background:none;border:0;cursor:pointer;text-decoration:underline}
 .btns{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
 .btns a{font:12px/1 system-ui,sans-serif;color:var(--strong);border:1px solid var(--strong);padding:5px 9px;border-radius:2px}
 .btns a:hover{color:var(--navy);border-color:var(--navy)}
@@ -133,14 +137,15 @@ footer{clear:both;padding:24px 0 40px;font-size:14px;color:var(--meta)}
 <div class="title"><a href="https://github.com/minkgwak-coder/market-intel-navigator" target="_blank" rel="noopener">Market Intelligence Navigator</a></div>
 <div>Import demand, suppliers and news for overseas medical-device markets in one search</div>
 <div class="meta">2026 · Python, SQLite, LangChain, FAISS</div>
-<div class="btns"><a href="https://github.com/minkgwak-coder/market-intel-navigator" target="_blank" rel="noopener">Code</a><a href="https://github.com/minkgwak-coder/market-intel-navigator/blob/main/docs/demo.mp4" target="_blank" rel="noopener">Video</a></div>
+<div class="btns"><a href="https://github.com/minkgwak-coder/market-intel-navigator" target="_blank" rel="noopener">Code</a><a href="https://github.com/minkgwak-coder/market-intel-navigator/blob/main/docs/demo.mp4" target="_blank" rel="noopener">Demo video</a><button type="button" id="tryBtn" aria-expanded="false" aria-controls="demoPanel">Try it</button></div>
 </div>
 </div>
 <ul class="desc">
 <li>Covers 207 countries and 5 device segments defined by HS codes, using UN Comtrade, World Bank and news data, with the reference year beside every figure</li>
-<li>Ask AI answers only from retrieved data and cites a source for each sentence; a 28-question evaluation scores number match, citation accuracy and abstention</li>
-<li>Revised after use by teammates: fixed a parser bug that read "us" as the United States, and added their requests for consistent currency units, certification status by country and internal notes from sales, CS and R&amp;D to the roadmap</li>
+<li>Ask AI plans the research, calls tools for certification rules and internal notes, answers only from retrieved data with a source for each sentence, and checks every citation and figure automatically; a 28-question evaluation scores number match, citation accuracy and abstention</li>
+<li>Revised after use by teammates: fixed a parser bug that read "us" as the United States, and built in their requests for internal notes from sales, CS and R&amp;D and certification guidance by country; consistent currency units are next</li>
 </ul>
+<div class="demo" id="demoPanel" hidden><div class="demo-h"><b>Try it</b><span>Interactive copy with recorded data. Open a market, or press Ask AI.</span><a href="demo.html" target="_blank" rel="noopener">Open full screen &#8599;</a><button type="button" id="tryClose">Close</button></div><iframe data-src="demo.html#BRA/dental" title="Market Intelligence Navigator demo"></iframe></div>
 
 <div class="pub">
 <div class="thumb"><svg class="teaser" viewBox="0 0 320 200" role="img" aria-label="Public libraries in Korea rose from 930 in 2014 to 1,208 in 2021"><rect width="320" height="200" fill="#fafafa"/><line x1="40" x2="304" y1="172.0" y2="172.0" stroke="#e5e5e5"/><text x="34" y="176.0" text-anchor="end">900</text><line x1="40" x2="304" y1="134.3" y2="134.3" stroke="#e5e5e5"/><text x="34" y="138.3" text-anchor="end">1,000</text><line x1="40" x2="304" y1="96.6" y2="96.6" stroke="#e5e5e5"/><text x="34" y="100.6" text-anchor="end">1,100</text><line x1="40" x2="304" y1="58.9" y2="58.9" stroke="#e5e5e5"/><text x="34" y="62.9" text-anchor="end">1,200</text><path d="M40.0 160.7 L77.7 142.6 L115.4 130.5 L153.1 118.4 L190.9 98.1 L228.6 83.7 L266.3 69.4 L304.0 55.8" fill="none" stroke="#17696f" stroke-width="2"/><circle cx="40.0" cy="160.7" r="3" fill="#17696f"/><circle cx="77.7" cy="142.6" r="3" fill="#17696f"/><circle cx="115.4" cy="130.5" r="3" fill="#17696f"/><circle cx="153.1" cy="118.4" r="3" fill="#17696f"/><circle cx="190.9" cy="98.1" r="3" fill="#17696f"/><circle cx="228.6" cy="83.7" r="3" fill="#17696f"/><circle cx="266.3" cy="69.4" r="3" fill="#17696f"/><circle cx="304.0" cy="55.8" r="3" fill="#17696f"/><text x="40.0" y="192" text-anchor="middle">2014</text><text x="153.1" y="192" text-anchor="middle">2017</text><text x="304.0" y="192" text-anchor="middle">2021</text></svg><span class="tag">CAU</span></div>
@@ -244,6 +249,11 @@ footer{clear:both;padding:24px 0 40px;font-size:14px;color:var(--meta)}
   });},{rootMargin:'-20% 0px -70% 0px'});
   Object.keys(links).forEach(function(k){var s=document.getElementById(k);if(s)io.observe(s);});
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('tryBtn'),p=document.getElementById('demoPanel'),f=p.querySelector('iframe');
+function open(o){p.hidden=!o;b.setAttribute('aria-expanded',o);if(o){if(!f.src)f.src=f.dataset.src;setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'nearest'})},50)}}
+b.addEventListener('click',function(){open(p.hidden)});document.getElementById('tryClose').addEventListener('click',function(){open(false)})})();
 </script>
 </body>
 </html>
